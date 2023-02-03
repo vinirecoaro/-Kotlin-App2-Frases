@@ -1,8 +1,11 @@
-package com.example.app2_motivationsecao24
+package com.example.app2_motivationsecao24.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.app2_motivationsecao24.infra.MotivationConstants
+import com.example.app2_motivationsecao24.R
+import com.example.app2_motivationsecao24.infra.SecurityPreferences
 import com.example.app2_motivationsecao24.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun handleUserName(){
-        val name = SecurityPreferences(this).getString("USER_NAME")
+        val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
         binding.textUserName.text = "Olá, $name!"
     }
 }
