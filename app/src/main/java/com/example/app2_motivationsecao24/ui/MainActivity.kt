@@ -9,6 +9,7 @@ import com.example.app2_motivationsecao24.R
 import com.example.app2_motivationsecao24.data.Mock
 import com.example.app2_motivationsecao24.infra.SecurityPreferences
 import com.example.app2_motivationsecao24.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleNextPhrase(){
-        binding.textPhrase.text = Mock().getPhrase(categoryId)
+        binding.textPhrase.text = Mock().getPhrase(categoryId, Locale.getDefault().language)
     }
 
     private fun handleFilter(id: Int){
